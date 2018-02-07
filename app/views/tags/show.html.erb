@@ -1,0 +1,15 @@
+<h1>Articles Tagged with "<%= @tag.name %>"</h1>
+
+<ul>
+  <% @tag.articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %></li>
+  <% end %>
+</ul>
+
+<div>
+	<%= link_to "Delete Tag: #{@tag.name}", tag_path(@tag), method: :delete, data: {confirm: "Do you really want to delete the tag?"} %>
+</div>
+
+<div>
+	<%= link_to "<< Back to Tags List", tags_path %>
+</div>
